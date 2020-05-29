@@ -73,6 +73,17 @@
 <!--            <artifactId>mysql-connector-java</artifactId>-->
 <!--            <version>5.1.34_1</version>-->
 <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka -->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.13</artifactId>
+            <version>${kafka.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>${kafka.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
