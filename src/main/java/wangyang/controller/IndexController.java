@@ -1,5 +1,6 @@
 package wangyang.controller;
 
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
@@ -7,10 +8,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import wangyang.bean.User;
 
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -27,7 +29,6 @@ public class IndexController {
 //    }
 
     @Value("${IMAGE_SERVER}")
-    private String iser;
     public String getTest() {
         return test;
     }
@@ -56,5 +57,22 @@ public class IndexController {
     public String showIndex(Model model) {
         model.addAttribute("name", "wangyanng");
         return "index";
+    }
+
+    @ResponseBody
+    @RequestMapping("/doPost")
+    public String[] doPost() {
+        String[] rs = {"1", "2"};
+        return rs;
+    }
+
+    @ResponseBody
+    @RequestMapping("/doPostP")
+    public String doPostByP(@RequestBody User pUser) {
+        Gson gson = new Gson();
+        String json1 = "{id: '1', name:'y'}";
+        User user = gson.fromJson(json1, User.class);
+        System.out.println(gson.toJson(user));
+        return gson.toJson(pUser);
     }
 }
