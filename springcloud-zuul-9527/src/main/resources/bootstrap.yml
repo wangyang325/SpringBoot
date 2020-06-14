@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: microservice-zuul
+  cloud:
+    config:
+      uri: http://localhost:3344/
+      profile: dev9527
+      label: master

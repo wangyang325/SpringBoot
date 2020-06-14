@@ -1,7 +1,8 @@
 package wangyang.lambda;
 
-import org.junit.jupiter.params.provider.ValueSource;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.DynamicTest;
+import org.junit.jupiter.api.Test;
+
 
 import java.util.*;
 import java.util.function.Consumer;
@@ -13,7 +14,6 @@ public class LambdaT {
         System.out.println("a");
     }
 
-    @Test
     public void type1 () {
         Runnable r = () -> System.out.println("---------------Run");
         r.run();

@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: springcloud-consumer
+  cloud:
+    config:
+      uri: http://localhost:3344/
+      profile: dev80
+      label: master

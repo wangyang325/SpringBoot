@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<tr>
+    <td colspan="2">
+        <button shiro:hasPermission="book:list" type="reset">
+            reset
+        </button>
+        <button shiro:hasPermission="book:add" type="button" onclick="">
+            submit
+        </button>
+    </td>
+</tr>
+</body>
+</html>
