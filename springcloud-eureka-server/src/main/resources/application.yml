@@ -1,0 +1,62 @@
+#server:
+#  port: 7001
+#
+## Eureka
+### ----------  Standalone Mode
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    # if register itself
+#    register-with-eureka: false
+#    # false means i am a register center
+#    fetch-registry: false
+#    service-url:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#
+### ----------  Peer Awareness
+##spring:
+##profiles: peer1
+##eureka:
+##instance:
+##hostname: peer1
+##client:
+##serviceUrl:
+##defaultZone: http://peer2/eureka/
+##
+##---
+##spring:
+##profiles: peer2
+##eureka:
+##instance:
+##hostname: peer2
+##client:
+##serviceUrl:
+##defaultZone: http://peer1/eureka/
+#
+### ----------  Three Peer Aware Eureka Servers
+##eureka:
+##client:
+##serviceUrl:
+##defaultZone: http://peer1/eureka/,http://peer2/eureka/,http://peer3/eureka/
+##
+##---
+##spring:
+##profiles: peer1
+##eureka:
+##instance:
+##hostname: peer1
+##
+##---
+##spring:
+##profiles: peer2
+##eureka:
+##instance:
+##hostname: peer2
+##
+##---
+##spring:
+##profiles: peer3
+##eureka:
+##instance:
+##hostname: peer3

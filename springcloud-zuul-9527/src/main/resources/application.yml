@@ -1,0 +1,44 @@
+#server:
+#  port: 9527
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:7001/eureka
+#  instance:
+#    instance-id: gateway-9527
+#    prefer-ip-address: true
+#
+#info:
+#  app.name: microservice-zuul
+#  build.artifactId: $project.artifactiId$
+#  build.version: $project.version$
+#
+#zuul:
+#  # "*" for all
+#  ignored-services: SPRINGCLOUD-PROVIDER
+#  prefix: /cloud
+#  routes:
+#    spring-cloud-provider:
+#      servicedId: SPRINGCLOUD-PROVIDER
+#      path: /zuul/**
+#  host:
+#    max-total-connections: 10000
+#    max-per-route-connections: 50
+#    socket-timeout-millis: 12000
+#    connect-timeout-millis: 12000
+#    connections: 500
+#
+#hystrix:
+#  command:
+#    spring-cloud-provider:
+#      execution:
+#        timeout:
+#          enabled: false
+#
+#ribbon:
+#  ReadTimeout: 12000
+#  ConnectTimeout: 12000
+#  eureka:
+#    enabled: true
+#
